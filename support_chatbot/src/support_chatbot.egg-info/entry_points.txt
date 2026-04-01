@@ -1,0 +1,2 @@
+[console_scripts]
+runchat = my_app.main:run_app
