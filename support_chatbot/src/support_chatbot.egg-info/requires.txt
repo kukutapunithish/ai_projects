@@ -1,2 +1,6 @@
 ipykernel
 uv
+requests
+ollama
+pyyaml
+streamlit

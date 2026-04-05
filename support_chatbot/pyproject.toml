@@ -6,7 +6,11 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "ipykernel",
-    "uv"
+    "uv",
+    "requests",
+    "ollama",
+    "pyyaml",
+    "streamlit"
 ]
 
 [build-system]
