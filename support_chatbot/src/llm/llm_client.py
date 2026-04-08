@@ -1,5 +1,6 @@
-import ollama
+import requests
 from config import CONFIG
+from handlers.error_handler import ChatBotError
 
 SYSTEM_DICT = {
             "role": "system",
@@ -51,12 +52,24 @@ def chat_with_model(messages):
     Returns:
     - The response from the model as a string.
     """
-    
     try:
+        URL = CONFIG["model"]["url"]
         model_name = CONFIG["model"]["name"]
-        response = ollama.chat(model=model_name, messages=[SYSTEM_DICT] + messages)
-        yield response['message']['content']
-    except Exception as e:
-        print(f"Error: {e}")
-        return None
+        data = {
+            "model": model_name,
+            "messages": [SYSTEM_DICT] + messages,
+            "options": {
+                "temperature": 0.2
+            },
+            "stream": False # Set to False to get a single JSON response
+        }
+
+        response = requests.post(URL, json=data)
+
+        res = dict(response.json())
+
+        yield res['message']['content']
+        
+    except ChatBotError as e:
+        print(e)
     
