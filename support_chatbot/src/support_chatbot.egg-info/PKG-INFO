@@ -10,6 +10,7 @@ Requires-Dist: requests
 Requires-Dist: ollama
 Requires-Dist: pyyaml
 Requires-Dist: streamlit
+Requires-Dist: requests
 
 # AI Personal Assistant (Chatbot) – Learning Project
 
