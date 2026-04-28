@@ -1,45 +1,62 @@
 # AI Personal Assistant (Chatbot) – Learning Project
 
-🎯 Project Goal
+## 🎯 Project Goal
 Develop a web-based chatbot that can:
-• Answer user questions
-• Summarize text
-• Act as a persona (e.g., coding tutor, travel planner)
+- Answer user questions
+- Summarize text
+- Act as a persona (e.g., coding tutor, travel planner)
 This project introduces you to the modern GenAI stack:
-• LLMs (Large Language Models) for intelligence
-• API integration for communication
-• Streamlit for user interface
-• LangChain/LlamaIndex for orchestration
+- LLMs (Large Language Models) for intelligence
+- API integration for communication
+- Streamlit for user interface
+- LangChain/LlamaIndex for orchestration
 
-🛠 Tools & Technologies
-• Brain (LLM): OpenAI GPT-4o or Google Gemini API
-• Interface: Streamlit (Python-based web app framework)
-• Orchestration: LangChain or LlamaIndex for managing conversation flow
+## 🛠 Tools & Technologies
+- Brain (LLM): OpenAI GPT-4o or Google Gemini API
+- Interface: Streamlit (Python-based web app framework)
+- Orchestration: LangChain or LlamaIndex for managing conversation flow
 
-📌 Implementation Roadmap
+## 📌 Implementation Roadmap
 
 1. Set Up Environment
-o Install Python and required libraries (streamlit, openai, langchain).
-o Ensure virtual environment setup for clean dependency management.
+- Install Python and required libraries (streamlit, openai, langchain).
+- Ensure virtual environment setup for clean dependency management.
 2. Obtain API Key
-o Register for OpenAI or Google AI Studio.
-o Securely store and load your API key (avoid hardcoding).
+- Register for OpenAI or Google AI Studio.
+- Securely store and load your API key (avoid hardcoding).
 3. Hello World Chatbot
-o Create a minimal app.py file.
-o Accept user input, send it to the LLM, and display the response.
-o Focus on understanding request/response flow.
+- Create a minimal app.py file.
+- Accept user input, send it to the LLM, and display the response.
+- Focus on understanding request/response flow.
 4. Run & Test
-o Launch with streamlit run app.py.
-o Interact with your chatbot and validate basic functionality.
+- Launch with streamlit run app.py.
+- Interact with your chatbot and validate basic functionality.
 
-📚 Learning Focus
-• Understand how APIs connect your app to an LLM.
-• Learn Streamlit components for building interactive UIs.
-• Explore LangChain/LlamaIndex for conversation memory and persona handling.
-• Practice secure coding habits (API key management, error handling).
+## 📚 Learning Focus
+- Understand how APIs connect your app to an LLM.
+- Learn Streamlit components for building interactive UIs.
+- Explore LangChain/LlamaIndex for conversation memory and persona handling.
+- Practice secure coding habits (API key management, error handling).
 
-🚀 Extensions (Optional Challenges)
-• Add persona modes (e.g., tutor, planner, storyteller).
-• Implement summarization feature for pasted text.
-• Store conversation history using LangChain memory.
-• Deploy your chatbot online (e.g., Streamlit Cloud, Hugging Face Spaces)
+## 🚀 Extensions (Optional Challenges)
+- Add persona modes (e.g., tutor, planner, storyteller).
+- Implement summarization feature for pasted text.
+- Store conversation history using LangChain memory.
+- Deploy your chatbot online (e.g., Streamlit Cloud, Hugging Face Spaces)
+
+## Setup
+- Use the following command to download and run the model
+```bash
+ollama run gemma3:270m
+```
+- For installing the required packages and building the file.
+```bash
+pip install -e .
+```
+
+## Run
+- Use the Following command to run the application
+```bash
+streamlit run app.py
+```
+
