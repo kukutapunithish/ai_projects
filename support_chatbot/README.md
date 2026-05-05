@@ -49,14 +49,14 @@ This project introduces you to the modern GenAI stack:
 ```bash
 ollama run gemma3:270m
 ```
-- For installing the required packages and building the file.
+- For building the docker image
 ```bash
-pip install -e .
+docker build -t kukutapunithishkumar/support_chatbot .
 ```
 
 ## Run
-- Use the Following command to run the application
+- For running the docker container
 ```bash
-streamlit run app.py
+docker run -p 8080:8080 kukutapunithishkumar/support_chatbot:latest
 ```
 
