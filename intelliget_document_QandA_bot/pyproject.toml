@@ -1,0 +1,31 @@
+[project]
+name = "intelliget_document_QandA_bot"
+version = "0.1.0"
+description = "A chatbot that can be used to chat with documents"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel",
+    "uv",
+    "requests",
+    "ollama",
+    "pyyaml",
+    "streamlit",
+    "requests",
+    "langchain",
+    "langchain-huggingface",
+    "langchain_weaviate",
+    "pymupdf4llm",
+    "langchain-text-splitters",
+    "weaviate-client[agents]",
+    "sentence-transformers",
+    "transformers",
+    "torchvision"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+runchat = "my_app.main:run_app"
