@@ -7,3 +7,4 @@ tests
 .git
 .gitignore
 user_docs
+.vscode

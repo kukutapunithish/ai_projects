@@ -1,6 +1,6 @@
 model:
   name: "gemma3:270m"
-  url: "http://localhost:11434/api/chat" #"http://host.docker.internal:11434/api/chat"
+  url: "http://host.docker.internal:11434/api/chat" #"http://localhost:11434/api/chat"
   temperature: 0.7
   top_k: 50
   top_p: 0.5

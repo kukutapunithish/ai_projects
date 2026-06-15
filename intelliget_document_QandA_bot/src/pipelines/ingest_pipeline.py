@@ -16,7 +16,7 @@ def docs_ingestion(dir_path):
     for file_name in os.listdir(dir_path):
         file_path = os.path.join(dir_path, file_name)
         if os.path.isfile(file_path):
-            output_file_path = os.path.join(processed_dir, f"{os.path.splitext(file_name)[0]}.md")
+            output_file_path = os.path.join(processed_dir, f"{os.path.splitext(file_name)[0]}.json")
             load_document(file_path, output_file_path)
             output_file_paths.append(output_file_path)
     return output_file_paths

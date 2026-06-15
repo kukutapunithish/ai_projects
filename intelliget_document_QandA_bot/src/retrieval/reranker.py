@@ -1,7 +1,9 @@
 from sentence_transformers import CrossEncoder
 from src.config import RETRIEVAL_CONFIG
+import streamlit as st
+from src.utils.logger import logger
 
-
+@st.cache_resource
 def get_reranker():
     """
     Placeholder function for the reranker component of the RAG pipeline.
@@ -10,6 +12,7 @@ def get_reranker():
     Returns:
         None
     """
+    logger.info("Loading reranker model...")
     reranker = CrossEncoder(RETRIEVAL_CONFIG['vector_model']['cross_encoder_model_name'])
     return reranker
 

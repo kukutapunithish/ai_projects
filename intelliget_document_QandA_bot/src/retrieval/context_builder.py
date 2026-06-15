@@ -7,16 +7,16 @@ def build_context_string(query,retrieved_docs):
         # 1. Pull the content and metadata fields cleanly
         text = doc.page_content
         topic = doc.metadata.get("topic", "Unknown Topic")
-        source = doc.metadata.get("source_file", "Unknown Source")
+        source = doc.metadata.get("file_name", "Unknown Source")
         page = doc.metadata.get("page_number", "N/A")
         
         # 2. Format it into a highly legible block for the LLM
         chunk_string = (
-            f"[Source {i}]: Topic: {topic} | File: {source} (Page {page})\n"
+            f"[Source {i}]: File: {source} (Page {page})\n"
             f"Content: {text}\n"
             f"---"
         )
         context_chunks.append(chunk_string)
         
     # 3. Join all blocks together with double newlines
-    return query + "\n\nContext: " + "\n\n".join(context_chunks)
+    return "Question:\n" + query + "\n\nContext:\n " + "\n\n".join(context_chunks)

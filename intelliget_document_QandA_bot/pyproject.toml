@@ -13,6 +13,7 @@ dependencies = [
     "streamlit",
     "requests",
     "langchain",
+    "langchain-core",
     "langchain-huggingface",
     "langchain_weaviate",
     "pymupdf4llm",

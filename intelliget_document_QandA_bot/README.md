@@ -28,7 +28,7 @@ This project combines Retrieval-Augmented Generation (RAG), Machine Learning cla
 - **NLP:** spaCy
 - **Reporting:** Jinja2
 - **Evaluation:** RAGAS
-- **Deployment:** Docker
+- **Deployment:** Docker compose
 
 ## Workflow
 
@@ -48,3 +48,14 @@ classifier/    # Model training, evaluation, artifacts
 agent/         # RAG agent, prompts, tools
 report/        # HTML templates and report generation
 app.py         # Streamlit application
+```
+
+## Setup
+- Use the following command to download and run the model
+```bash
+ollama run gemma3:270m
+```
+- For building the docker image and running it
+```bash
+docker compose up --build -d
+```

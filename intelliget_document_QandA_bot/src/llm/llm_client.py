@@ -19,28 +19,31 @@ def chat_with_model(messages):
     Returns:
     - The response from the model as a string.
     """
+
+    URL = MODEL_CONFIG["model"]["url"]
+    data = {
+        "model": MODEL_CONFIG["model"]["name"],
+        "messages": [SYSTEM_DICT] + messages,
+        "options": {
+            "temperature": MODEL_CONFIG["model"]["temperature"],
+            "top_k": MODEL_CONFIG["model"]["top_k"],
+            "top_p": MODEL_CONFIG["model"]["top_p"]
+        },
+        "stream": False
+    }
+
     try:
-        URL = MODEL_CONFIG["model"]["url"]
-        data = {
-            "model": MODEL_CONFIG["model"]["name"],
-            "messages": [SYSTEM_DICT] + messages,
-            "options": {
-                "temperature": MODEL_CONFIG["model"]["temperature"],
-                "top_k": MODEL_CONFIG["model"]["top_k"],
-                "top_p": MODEL_CONFIG["model"]["top_p"]
-            },
-            "stream": False
-        }
+        with requests.post(URL, json=data, timeout=60) as response:
+            if response.status_code != 200:
+                raise ChatBotError(
+                    f"Ollama HTTP {response.status_code} error",
+                    response.status_code
+                )
 
-        response = requests.post(URL, json=data)
+            return response.json()["message"]["content"]
 
-        if response.status_code != 200:
-            raise ChatBotError(f"Ollama HTTP {response.status_code} error",response.status_code)
-
-        res = dict(response.json())
-        content = res['message']['content']
-        # if content:
-        #     yield content
-        return content
-    except Exception as e:
-        raise ChatBotError(f"Failed to connect to Ollama server: {e}",500) from e
+    except requests.RequestException as e:
+        raise ChatBotError(
+            f"Failed to connect to Ollama server: {e}",
+            500
+        ) from e
