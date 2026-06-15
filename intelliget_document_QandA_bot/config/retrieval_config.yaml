@@ -1,0 +1,13 @@
+splitting:
+  chunk_size: 500
+  chunk_overlap: 50
+
+retriever:
+  search_type: "mmr"
+  search_kwargs:
+    k: 5
+    fetch_k: 20
+
+vector_model:
+  embedding_model_name: "sentence-transformers/all-mpnet-base-v2"
+  cross_encoder_model_name: "BAAI/bge-reranker-base"
